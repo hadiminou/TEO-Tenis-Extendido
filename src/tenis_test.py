@@ -71,12 +71,12 @@ def test_num_partidos_nombre(datos:list[PartidoTenis]):
     print("\ntest_num_partidos_nombre")
     jugador = "Rafael Nadal"
     print(f"Los partidos jugados y ganados por superficie de {jugador} son")
-    for c,v in num_partidos_nombre(datos, jugador).items():
-        print(f"{c[0]} ---> {v}")
+    for c,v in num_partidos_nombre2(datos, jugador).items():
+        print(f"{c} ---> {v}")
     jugador = "Carlos Alcaraz"
     print(f"Los partidos jugados y ganados por superficie de {jugador} son")
-    for c,v in num_partidos_nombre(datos, jugador).items():
-        print(f"{c[0]} ---> {v}")
+    for c,v in num_partidos_nombre2(datos, jugador).items():
+        print(f"{c} ---> {v}")
 
 def test_num_tenistas_distintos_por_superficie(datos:list[PartidoTenis]):
     print("\ntest_num_tenistas_distintos_por_superficie")
@@ -94,7 +94,7 @@ def test_mas_errores_por_jugador(datos:list[PartidoTenis]):
     print("\ntest_mas_errores_por_jugador")
     print("El partido con mas errores por cada jugador es")
     for c,v in mas_errores_por_jugador(datos).items():
-        print(f"\n{c} ---> {v[1]}")
+        print(f"\n{c} ---> {v}")
 
 def test_partido_mas_errores_por_mes(datos:list[PartidoTenis]):
     print("\ntest_partido_mas_errores_por_mes")
@@ -125,7 +125,7 @@ def test_mayor_numero_dias_sin_jugar(datos:list[PartidoTenis]):
         {mayor_numero_dias_sin_jugar(datos, jugador)}")
 
 if __name__=="__main__":
-    datos = lee_partidos_tenis("Proyectos Python\TEO-Tenis-Extendido-main\data\Tenis.csv")
+    datos = lee_partidos_tenis("data\Tenis.csv")
     #test_lee_partidos_tenis(datos)
     #test_partido_menos_errores(datos)
     #test_jugador_mas_partido(datos)

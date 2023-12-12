@@ -132,13 +132,17 @@ def num_partidos_nombre(partidos:list[PartidoTenis], nombre:str)->dict[str, tupl
     return dic_superficie
 
 def num_partidos_nombre2(partidos:list[PartidoTenis], nombre:str)->dict[str, tuple[int, int]]:
-    dic = defaultdict(int)
+    dic_superficie = defaultdict(list)
+    dic_res = dict()
     for i in partidos:
-        if i.jugador1 == nombre and ganador(i) == i.jugador1:
-            dic[i.superficie] += 1
-        if i.jugador2 == nombre and ganador(i) == i.jugador2:
-            dic[i.superficie] += 1
-    return dic
+        if i.jugador1.upper() == nombre.upper() or i.jugador2.upper() == nombre.upper():
+            if  ganador(i).upper() == nombre.upper():
+                dic_superficie[i.superficie].append(1)
+            else:
+                dic_superficie[i.superficie].append(0)
+    for c,v in dic_superficie.items():
+        dic_res[c] = (len(v), sum(v))
+    return dic_res
 
 def num_tenistas_distintos_por_superficie(partidos:list[PartidoTenis])->dict[str, int]:
     dic_jugadores = defaultdict(set)
@@ -151,25 +155,23 @@ def num_tenistas_distintos_por_superficie(partidos:list[PartidoTenis])->dict[str
     return dic_res
 
 def superficie_con_mas_tenistas_distintos(partidos:list[PartidoTenis])->tuple[str, int]:
-    dic_superficie = defaultdict(set)
-    dic_res = dict()
-    for i in partidos:
-        dic_superficie[i.superficie].add(i.jugador1)
-        dic_superficie[i.superficie].add(i.jugador2)
-    for c,v in dic_superficie.items():
-        dic_res[c] = len(v)
-    return max(dic_res.items(), key = lambda e:e[1])
+    # dic_superficie = defaultdict(set)
+    # dic_res = dict()
+    # for i in partidos:
+    #     dic_superficie[i.superficie].add(i.jugador1)
+    #     dic_superficie[i.superficie].add(i.jugador2)
+    # for c,v in dic_superficie.items():
+    #     dic_res[c] = len(v)
+    return max(num_tenistas_distintos_por_superficie(partidos).items(), key = lambda e:e[1])
 
 def mas_errores_por_jugador(partidos:list[PartidoTenis])->dict[str, list]:
     dic_errores = defaultdict(list)
     dic_res = dict()
     for i in partidos:
-        dic_errores[i.jugador1].append((i.errores_nf1, PartidoTenis(i.fecha, i.jugador1, i.jugador2,\
-                                            i.superficie, i.resultado, i.errores_nf1, i.errores_nf2)))
-        dic_errores[i.jugador2].append((i.errores_nf2, PartidoTenis(i.fecha, i.jugador1, i.jugador2,\
-                                            i.superficie, i.resultado, i.errores_nf1, i.errores_nf2)))
+        dic_errores[i.jugador1].append((i.errores_nf1, i))
+        dic_errores[i.jugador2].append((i.errores_nf2, i))
     for c,v in dic_errores.items():
-        dic_res[c] = max(v, key = lambda e:e[0])
+        dic_res[c] = max(v, key = lambda e:e[0])[1]
     return dic_res
 
 def partido_mas_errores_por_mes(partidos:list[PartidoTenis], superficies:list[str]=None)->dict[date.month,\
