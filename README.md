@@ -14,7 +14,7 @@ La información de cada línea se corresponde con lo siguiente:
 - **primer jugador**: nombre del primer jugador, de tipo str.
 - **segundo jugador**: nombre del segundo jugador, de tipo str.
 - **superficie**: superficie en la que se juega el partido, de tipo str.
-- **resultado del primer set**: resultado del primer set en formato int-int. El primer némero representa los juegos ganados por el primer jugador y el segundo los que ha ganado el segundo jugador. El jugador que más puntos tiene es el que gana el set.
+- **resultado del primer set**: resultado del primer set en formato int-int. El primer número representa los juegos ganados por el primer jugador y el segundo los que ha ganado el segundo jugador. El jugador que más puntos tiene es el que gana el set.
 - **resultado del segundo set**: resultado del segundo set en formato int-int.
 - **resultado del tercer set**: resultado del tercer set en formato int-int. Si el tercer set no se ha jugado aparecerá como 0-0.
 - **errores no forzados del primer jugador**: errores no forzados del jugador 1, de tipo int.
@@ -44,7 +44,7 @@ Cree un módulo **tenis.py** e implemente en él las funciones que se piden. Pue
    
      **parsea\_set**: Toma una cadena con el resultado de un set o parcial y devuelve una tupla de tipo Parcial que representa ese set. La cadena de entrada se espera que tenga los juegos del set del primer jugador, seguido de un guión y los juegos del set del segundo jugador, es decir, int-int. 
 
-1. **partidos\_menos\_errores**: recibe una lista de tipo PartidoTenis y devuelve el partido con mayor némero de errores no forzados entre los dos jugadores.
+1. **partidos\_menos\_errores**: recibe una lista de tipo PartidoTenis y devuelve el partido con mayor número de errores no forzados entre los dos jugadores.
 
 1. **jugador\_mas\_partidos**: recibe una lista de tipo PartidoTenis y devuelve una tupla con el nombre del jugador que más partidos ha jugado y el número de partidos. 
 
@@ -58,23 +58,26 @@ Cree un módulo **tenis.py** e implemente en él las funciones que se piden. Pue
 
     **Recuerde** que tiene una función que, dado un partido, le devuelve el nombre del ganador y consecuentemente el otro jugador es perdedor.
 
-1. **n\_tenistas\_con\_mas\_errores** (2 puntos): recibe una lista de tuplas de tipo PartidoTenis y un némero n, con valor por defecto None, y devuelve una lista con los nombres de los n tenistas que han acumulado más errores no forzados en el total de partidos que han jugado. Si n es None, entonces devuelve todos los tenistas de la lista de tuplas ordenados de mayor a menor némero de errores no forzados. 
+1. **n\_tenistas\_con\_mas\_errores** (2 puntos): recibe una lista de tuplas de tipo PartidoTenis y un número n, con valor por defecto None, y devuelve una lista con los nombres de los n tenistas que han acumulado más errores no forzados en el total de partidos que han jugado. Si n es None, entonces devuelve todos los tenistas de la lista de tuplas ordenados de mayor a menor número de errores no forzados. 
 
 1. **fechas\_ordenadas\_por\_jugador**: recibe una lista de tuplas de tipo PartidoTenis y devuelve un diccionario en el que a cada jugador le hace corresponder una lista ordenada con las fechas de sus partidos.
 
-1. **num\_partidos\_nombre**: recibe el nombre de un tenista y devuelve un diccionario en el que las claves son las superficies y los valores una tupla con el némero de partidos jugados y ganados por el tenista en la superficie dada como clave.
+1. **num\_partidos\_nombre**: recibe una lista de tuplas de tipo PartidoTenis y el nombre de un tenista y devuelve un diccionario en el que las claves son las superficies y los valores una tupla con el número de partidos jugados y ganados por el tenista en la superficie de que se trate.
 
-1. **num\_tenistas\_distintos\_por\_superficie** (1,5 puntos): recibe una lista de tuplas de tipo PartidoTenis, y devuelve un diccionario tal que a cada superficie (clave) le hace corresponder el némero de jugadores distintos que han jugado partidos en ese tipo de superficie.  
+1. **num\_tenistas\_distintos\_por\_superficie** (1,5 puntos): recibe una lista de tuplas de tipo PartidoTenis, y devuelve un diccionario tal que a cada superficie (clave) le hace corresponder el número de jugadores distintos que han jugado partidos en ese tipo de superficie.  
 
-1. **superficie\_con\_mas\_tenistas\_distintos**: recibe una lista de tuplas de tipo PartidoTenies y devuelve una tupla con la superficie en la que juegan un mayor némero de jugadores distintos, y el némero de jugadores que han jugado en esa superficie.
+1. **superficie\_con\_mas\_tenistas\_distintos**: recibe una lista de tuplas de tipo PartidoTenies y devuelve una tupla con la superficie en la que juegan un mayor número de jugadores distintos, y el número de jugadores que han jugado en esa superficie.
 
-1. **mas\_errores\_por\_jugador**: recibe una lista de tuplas de tipo PartidoTenis y devuelve un diccionario en el que a cada jugador y le hace corresponder el partido en el que ha cometido mayor némero de errores no forzados.
+1. **mas\_errores\_por\_jugador**: recibe una lista de tuplas de tipo PartidoTenis y devuelve un diccionario en el que a cada jugador y le hace corresponder el partido en el que ha cometido mayor número de errores no forzados.
 
 1. **partido\_mas\_errores\_por\_mes** (2 puntos): recibe una lista de tuplas de tipo PartidoTenis, y una lista de cadenas con tipos de superficie, que toma como valor por defecto None, y devuelve un diccionario que asocia a cada mes, una tupla (fecha del partido, jugador1, jugador2) que representa al partido de ese mes jugado en una de las superficies de la lista dada como parámetro en el que se han cometido más errores no forzados, teniendo en cuenta los errores de ambos jugadores. Si la lista de superficies dada como parámetro tiene como valor None, entonces se tendrán en cuenta todas las superficies para generar el diccionario resultante. 
 
 1. **n\_partidos\_mas\_errores\_por\_jugador**: recibe una lista de tuplas de tipo  PartidoTenis y un valor entero n y devuelve un diccionario en el que a cada jugador le hace corresponder una lista con los n partidos en los que ha cometido más errores no forzados.
 
-1. **mayor_numero_dias_sin_jugar**: recibe una lista de partidos y un jugador y devuelve el máximo némero de días sin jugar del jugador dado. Si el jugador solo ha disputado un partido devolverá None.
+1. **mayor_numero_dias_sin_jugar**: recibe una lista de partidos y un jugador y devuelve el máximo número de días sin jugar del jugador dado. Si el jugador solo ha disputado un partido devolverá None.
+
+    **Ayuda**: La diferencia de fechas en Python devuelve un objeto de tipo timedelta que, además de los días de diferencia entre las fechas, incluye las horas, minutos y segundos. Para obtener sólo los días
+    utilice la propiedad "days" a dicha diferencia.
 
 1. Cree un módulo de **tenis\_test.py** (1 punto): Defina una función de test para cada función solicitada. Se recomienda el uso de parámetros en las funciones de test para reutilizar código. 
 
@@ -396,95 +399,104 @@ EJERCICIO  8==================================================
 Test de 'fechas_por_jugador'
 Las fechas de cada partido por jugador son
 Sebastian Korda --> [datetime.date(2011, 11, 7), datetime.date(2011, 11, 10)]
-Ben Shelton --> [datetime.date(2011, 11, 7), datetime.date(2013, 8, 12), datetime.date(2018, 7, 20), datetime.date(2014, 9, 20), datetime.date(2018, 3, 23)]
-Benjamin Bonzi --> [datetime.date(2019, 3, 27), datetime.date(2016, 1, 15)]
-Sebastian Baez --> [datetime.date(2019, 3, 27), datetime.date(2010, 7, 1)]
-John Isner --> [datetime.date(2016, 1, 17), datetime.date(2011, 11, 10), datetime.date(2012, 2, 24), datetime.date(2014, 9, 20), datetime.date(2015, 10, 25)]
-Christopher O'Connell --> [datetime.date(2016, 1, 17), datetime.date(2015, 4, 28), datetime.date(2019, 8, 16)]
-Daniel Altmaier --> [datetime.date(2019, 3, 26), datetime.date(2015, 10, 27), datetime.date(2013, 1, 12)]
+Ben Shelton --> [datetime.date(2011, 11, 7), datetime.date(2013, 8, 12), datetime.date(2014, 9, 20), datetime.date(2018, 3, 23), datetime.date(2018, 7, 20)]
+Benjamin Bonzi --> [datetime.date(2016, 1, 15), datetime.date(2019, 3, 27)]
+Sebastian Baez --> [datetime.date(2010, 7, 1), datetime.date(2019, 3, 27)]
+John Isner --> [datetime.date(2011, 11, 10), datetime.date(2012, 2, 24), datetime.date(2014, 9, 20), datetime.date(2015, 10, 25), datetime.date(2016, 1, 17)]
+Christopher O'Connell --> [datetime.date(2015, 4, 28), datetime.date(2016, 1, 17), datetime.date(2019, 8, 16)]
+Daniel Altmaier --> [datetime.date(2013, 1, 12), datetime.date(2015, 10, 27), datetime.date(2019, 3, 26)]
 Hubert Hurkacz --> [datetime.date(2019, 3, 26)]
-Jack Draper --> [datetime.date(2017, 11, 28), datetime.date(2014, 8, 13), datetime.date(2011, 2, 13)]
-Nikoloz Basilashvili --> [datetime.date(2017, 11, 28), datetime.date(2019, 7, 25), datetime.date(2017, 7, 10)]
+Jack Draper --> [datetime.date(2011, 2, 13), datetime.date(2014, 8, 13), datetime.date(2017, 11, 28)]
+Nikoloz Basilashvili --> [datetime.date(2017, 7, 10), datetime.date(2017, 11, 28), datetime.date(2019, 7, 25)]
 Miomir Kecmanovic --> [datetime.date(2017, 8, 10)]
-Roman Safiullin --> [datetime.date(2017, 8, 10), datetime.date(2019, 6, 22), datetime.date(2013, 4, 23), datetime.date(2018, 7, 18), datetime.date(2010, 12, 12), datetime.date(2010, 10, 14), datetime.date(2010, 4, 24)]
-Marton Fucsovics --> [datetime.date(2019, 8, 13), datetime.date(2011, 2, 13)]
+Roman Safiullin --> [datetime.date(2010, 4, 24), datetime.date(2010, 10, 14), datetime.date(2010, 12, 12), datetime.date(2013, 
+4, 23), datetime.date(2017, 8, 10), datetime.date(2018, 7, 18), datetime.date(2019, 6, 22)]
+Marton Fucsovics --> [datetime.date(2011, 2, 13), datetime.date(2019, 8, 13)]
 Gregoire Barrere --> [datetime.date(2019, 8, 13)]
-Ugo Humbert --> [datetime.date(2014, 12, 13), datetime.date(2018, 1, 4), datetime.date(2012, 7, 19)]
-Pedro Martínez --> [datetime.date(2014, 12, 13), datetime.date(2012, 2, 24)]
-Adrian Mannarino --> [datetime.date(2020, 7, 9), datetime.date(2019, 7, 25), datetime.date(2011, 6, 3)]
-Botic Van de Zandschulp --> [datetime.date(2020, 7, 9), datetime.date(2014, 7, 6), datetime.date(2020, 4, 17)]
-Jordan Thompson --> [datetime.date(2013, 10, 21), datetime.date(2013, 6, 23), datetime.date(2020, 9, 4)]
-Quentin Halys --> [datetime.date(2013, 10, 21), datetime.date(2014, 8, 13), datetime.date(2017, 3, 16), datetime.date(2019, 3, 2)]
-Tommy Paul --> [datetime.date(2017, 8, 26), datetime.date(2013, 12, 19)]
-Novak Djokovic --> [datetime.date(2017, 8, 26), datetime.date(2012, 2, 13), datetime.date(2010, 5, 27), datetime.date(2011, 4, 3), datetime.date(2010, 6, 27), datetime.date(2015, 3, 7), datetime.date(2016, 1, 3), datetime.date(2016, 10, 13), datetime.date(2015, 11, 30), datetime.date(2017, 6, 16), datetime.date(2016, 1, 26), datetime.date(2015, 4, 11), datetime.date(2013, 12, 22), datetime.date(2011, 1, 9), datetime.date(2019, 10, 24), datetime.date(2018, 6, 3), datetime.date(2020, 12, 16), datetime.date(2012, 11, 20), datetime.date(2019, 1, 15), datetime.date(2020, 10, 24), datetime.date(2015, 5, 3), datetime.date(2012, 5, 30), datetime.date(2013, 2, 1), datetime.date(2010, 10, 26), datetime.date(2016, 3, 5), datetime.date(2010, 9, 28)]
+Ugo Humbert --> [datetime.date(2012, 7, 19), datetime.date(2014, 12, 13), datetime.date(2018, 1, 4)]
+Pedro Martínez --> [datetime.date(2012, 2, 24), datetime.date(2014, 12, 13)]
+Adrian Mannarino --> [datetime.date(2011, 6, 3), datetime.date(2019, 7, 25), datetime.date(2020, 7, 9)]
+Botic Van de Zandschulp --> [datetime.date(2014, 7, 6), datetime.date(2020, 4, 17), datetime.date(2020, 7, 9)]
+Jordan Thompson --> [datetime.date(2013, 6, 23), datetime.date(2013, 10, 21), datetime.date(2020, 9, 4)]
+Quentin Halys --> [datetime.date(2013, 10, 21), datetime.date(2014, 8, 13), datetime.date(2017, 3, 16), datetime.date(2019, 3, 
+2)]
+Tommy Paul --> [datetime.date(2013, 12, 19), datetime.date(2017, 8, 26)]
+Novak Djokovic --> [datetime.date(2010, 5, 27), datetime.date(2010, 6, 27), datetime.date(2010, 9, 28), datetime.date(2010, 10, 26), datetime.date(2011, 1, 9), datetime.date(2011, 4, 3), datetime.date(2012, 2, 13), datetime.date(2012, 5, 30), datetime.date(2012, 11, 20), datetime.date(2013, 2, 1), datetime.date(2013, 12, 22), datetime.date(2015, 3, 7), datetime.date(2015, 4, 11), datetime.date(2015, 5, 3), datetime.date(2015, 11, 30), datetime.date(2016, 1, 3), datetime.date(2016, 1, 26), datetime.date(2016, 3, 5), datetime.date(2016, 10, 13), datetime.date(2017, 6, 16), datetime.date(2017, 8, 26), datetime.date(2018, 6, 3), datetime.date(2019, 1, 15), datetime.date(2019, 10, 24), datetime.date(2020, 10, 24), datetime.date(2020, 12, 16)]
 Lorenzo Sonego --> [datetime.date(2019, 6, 22), datetime.date(2020, 2, 21)]
-Carlos Alcaraz --> [datetime.date(2013, 4, 23), datetime.date(2020, 12, 2), datetime.date(2012, 5, 7), datetime.date(2017, 12, 21), datetime.date(2011, 4, 3), datetime.date(2016, 12, 4), datetime.date(2018, 5, 4), datetime.date(2016, 8, 30), datetime.date(2020, 7, 11), datetime.date(2010, 9, 20), datetime.date(2015, 6, 13), datetime.date(2013, 12, 22), datetime.date(2013, 7, 15), datetime.date(2010, 11, 7), datetime.date(2013, 6, 26), datetime.date(2017, 12, 5), datetime.date(2015, 6, 4)]
-Tomas Martin Etcheverry --> [datetime.date(2010, 6, 19), datetime.date(2020, 1, 24), datetime.date(2020, 3, 19), datetime.date(2017, 7, 10)]
-Cristian Garín --> [datetime.date(2010, 6, 19), datetime.date(2016, 9, 9), datetime.date(2020, 3, 19), datetime.date(2016, 2, 3), datetime.date(2015, 3, 13)]
-Arthur Rinderknech --> [datetime.date(2012, 10, 25), datetime.date(2012, 9, 2)]
-Richard Gasquet --> [datetime.date(2012, 10, 25), datetime.date(2016, 11, 21), datetime.date(2012, 10, 24)]
-Alex de Mi±aur --> [datetime.date(2016, 9, 9), datetime.date(2012, 10, 14), datetime.date(2013, 1, 8)]
-Lorenzo Musetti --> [datetime.date(2018, 7, 18), datetime.date(2013, 8, 12), datetime.date(2012, 4, 20)]
-Jenson Brooksby --> [datetime.date(2012, 10, 14), datetime.date(2010, 12, 12), datetime.date(2020, 9, 4), datetime.date(2020, 4, 25)]
-Filip Krajinovic --> [datetime.date(2011, 6, 18), datetime.date(2010, 11, 16)]
-Diego Schwartzman --> [datetime.date(2011, 6, 18), datetime.date(2016, 11, 21), datetime.date(2016, 1, 15), datetime.date(2018, 2, 3), datetime.date(2017, 11, 7), datetime.date(2019, 1, 26), datetime.date(2018, 3, 28), datetime.date(2020, 10, 4), datetime.date(2013, 2, 9), datetime.date(2013, 7, 15), datetime.date(2013, 11, 29), datetime.date(2018, 5, 23), datetime.date(2013, 6, 26), datetime.date(2014, 11, 20), datetime.date(2017, 12, 27), datetime.date(2018, 5, 1), datetime.date(2012, 3, 10), datetime.date(2017, 1, 29)]
-Alexander Zverev --> [datetime.date(2012, 4, 16), datetime.date(2017, 3, 20), datetime.date(2020, 7, 11), datetime.date(2016, 10, 13), datetime.date(2018, 5, 19), datetime.date(2015, 4, 11), datetime.date(2018, 3, 24), datetime.date(2020, 12, 16), datetime.date(2012, 5, 30), datetime.date(2013, 2, 1), datetime.date(2011, 12, 23), datetime.date(2018, 5, 1), datetime.date(2013, 7, 3)]
-Emil Ruusuvuori --> [datetime.date(2012, 4, 16), datetime.date(2010, 11, 16), datetime.date(2013, 1, 8)]
+Carlos Alcaraz --> [datetime.date(2010, 9, 20), datetime.date(2010, 11, 7), datetime.date(2011, 4, 3), datetime.date(2012, 5, 7), datetime.date(2013, 4, 23), datetime.date(2013, 6, 26), datetime.date(2013, 7, 15), datetime.date(2013, 12, 22), datetime.date(2015, 6, 4), datetime.date(2015, 6, 13), datetime.date(2016, 8, 30), datetime.date(2016, 12, 4), datetime.date(2017, 12, 5), datetime.date(2017, 12, 21), datetime.date(2018, 5, 4), datetime.date(2020, 7, 11), datetime.date(2020, 12, 2)]
+Tomas Martin Etcheverry --> [datetime.date(2010, 6, 19), datetime.date(2017, 7, 10), datetime.date(2020, 1, 24), datetime.date(2020, 3, 19)]
+Cristian Garín --> [datetime.date(2010, 6, 19), datetime.date(2015, 3, 13), datetime.date(2016, 2, 3), datetime.date(2016, 9, 9), datetime.date(2020, 3, 19)]
+Arthur Rinderknech --> [datetime.date(2012, 9, 2), datetime.date(2012, 10, 25)]
+Richard Gasquet --> [datetime.date(2012, 10, 24), datetime.date(2012, 10, 25), datetime.date(2016, 11, 21)]
+Alex de Miñaur --> [datetime.date(2012, 10, 14), datetime.date(2013, 1, 8), datetime.date(2016, 9, 9)]
+Lorenzo Musetti --> [datetime.date(2012, 4, 20), datetime.date(2013, 8, 12), datetime.date(2018, 7, 18)]
+Jenson Brooksby --> [datetime.date(2010, 12, 12), datetime.date(2012, 10, 14), datetime.date(2020, 4, 25), datetime.date(2020, 
+9, 4)]
+Filip Krajinovic --> [datetime.date(2010, 11, 16), datetime.date(2011, 6, 18)]
+Diego Schwartzman --> [datetime.date(2011, 6, 18), datetime.date(2012, 3, 10), datetime.date(2013, 2, 9), datetime.date(2013, 6, 26), datetime.date(2013, 7, 15), datetime.date(2013, 11, 29), datetime.date(2014, 11, 20), datetime.date(2016, 1, 15), datetime.date(2016, 11, 21), datetime.date(2017, 1, 29), datetime.date(2017, 11, 7), datetime.date(2017, 12, 27), datetime.date(2018, 2, 3), datetime.date(2018, 3, 28), datetime.date(2018, 5, 1), datetime.date(2018, 5, 23), datetime.date(2019, 1, 26), datetime.date(2020, 10, 4)]
+Alexander Zverev --> [datetime.date(2011, 12, 23), datetime.date(2012, 4, 16), datetime.date(2012, 5, 30), datetime.date(2013, 
+2, 1), datetime.date(2013, 7, 3), datetime.date(2015, 4, 11), datetime.date(2016, 10, 13), datetime.date(2017, 3, 20), datetime.date(2018, 3, 24), datetime.date(2018, 5, 1), datetime.date(2018, 5, 19), datetime.date(2020, 7, 11), datetime.date(2020, 12, 
+16)]
+Emil Ruusuvuori --> [datetime.date(2010, 11, 16), datetime.date(2012, 4, 16), datetime.date(2013, 1, 8)]
 Constant Lestienne --> [datetime.date(2012, 2, 26), datetime.date(2014, 4, 15)]
-Federico Coria --> [datetime.date(2012, 2, 26), datetime.date(2014, 3, 26), datetime.date(2010, 7, 1), datetime.date(2013, 1, 12)]
-Jaume Munar --> [datetime.date(2020, 8, 1), datetime.date(2020, 1, 2), datetime.date(2020, 2, 8), datetime.date(2020, 11, 9)]
+Federico Coria --> [datetime.date(2010, 7, 1), datetime.date(2012, 2, 26), datetime.date(2013, 1, 12), datetime.date(2014, 3, 26)]
+Jaume Munar --> [datetime.date(2020, 1, 2), datetime.date(2020, 2, 8), datetime.date(2020, 8, 1), datetime.date(2020, 11, 9)]  
 Grigor Dimitrov --> [datetime.date(2020, 8, 1)]
 Mikael Ymer --> [datetime.date(2014, 4, 1), datetime.date(2014, 4, 1), datetime.date(2020, 4, 25)]
 Nuno Borges --> [datetime.date(2012, 3, 28), datetime.date(2020, 9, 9)]
 Fabio Fognini --> [datetime.date(2012, 3, 28)]
-Daniil Medvedev --> [datetime.date(2011, 9, 23), datetime.date(2018, 5, 4), datetime.date(2016, 9, 22), datetime.date(2014, 10, 28), datetime.date(2016, 1, 3), datetime.date(2018, 8, 23), datetime.date(2017, 9, 6), datetime.date(2017, 2, 16), datetime.date(2017, 6, 14), datetime.date(2017, 12, 27), datetime.date(2010, 8, 28), datetime.date(2013, 7, 29), datetime.date(2010, 11, 26), datetime.date(2019, 6, 11)]
+Daniil Medvedev --> [datetime.date(2010, 8, 28), datetime.date(2010, 11, 26), datetime.date(2011, 9, 23), datetime.date(2013, 7, 29), datetime.date(2014, 10, 28), datetime.date(2016, 1, 3), datetime.date(2016, 9, 22), datetime.date(2017, 2, 16), datetime.date(2017, 6, 14), datetime.date(2017, 9, 6), datetime.date(2017, 12, 27), datetime.date(2018, 5, 4), datetime.date(2018, 8, 23), datetime.date(2019, 6, 11)]
 Soon Woo Kwon --> [datetime.date(2011, 9, 23), datetime.date(2020, 6, 16)]
 Aslan Karatsev --> [datetime.date(2020, 12, 6)]
-Albert Ramos Vi±olas --> [datetime.date(2020, 12, 6), datetime.date(2014, 10, 25), datetime.date(2010, 5, 27), datetime.date(2020, 4, 17)]
+Albert Ramos Viñolas --> [datetime.date(2010, 5, 27), datetime.date(2014, 10, 25), datetime.date(2020, 4, 17), datetime.date(2020, 12, 6)]
 J.J. Wolf --> [datetime.date(2012, 12, 9)]
 Alexander Bublik --> [datetime.date(2012, 12, 9), datetime.date(2014, 1, 26)]
-Bernabé Zapata Miralles --> [datetime.date(2018, 11, 17), datetime.date(2014, 1, 26)]
+Bernabé Zapata Miralles --> [datetime.date(2014, 1, 26), datetime.date(2018, 11, 17)]
 Alejandro Davidovich Fokina --> [datetime.date(2018, 11, 17)]
 Denis Shapovalov --> [datetime.date(2016, 5, 3)]
-Yoshihito Nishioka --> [datetime.date(2016, 5, 3), datetime.date(2011, 6, 3)]
-Gael Monfils --> [datetime.date(2010, 5, 7), datetime.date(2016, 2, 17), datetime.date(2012, 5, 7), datetime.date(2011, 12, 19)]
+Yoshihito Nishioka --> [datetime.date(2011, 6, 3), datetime.date(2016, 5, 3)]
+Gael Monfils --> [datetime.date(2010, 5, 7), datetime.date(2011, 12, 19), datetime.date(2012, 5, 7), datetime.date(2016, 2, 17)]
 Laslo Djere --> [datetime.date(2010, 5, 7), datetime.date(2020, 9, 9)]
-David Goffin --> [datetime.date(2012, 12, 11), datetime.date(2010, 5, 27), datetime.date(2015, 3, 13)]
+David Goffin --> [datetime.date(2010, 5, 27), datetime.date(2012, 12, 11), datetime.date(2015, 3, 13)]
 Maxime Cressy --> [datetime.date(2012, 12, 11)]
 Taro Daniel --> [datetime.date(2015, 4, 28), datetime.date(2020, 2, 21)]
-Casper Ruud --> [datetime.date(2012, 9, 2), datetime.date(2013, 3, 24), datetime.date(2020, 10, 23), datetime.date(2019, 1, 26), datetime.date(2019, 5, 22), datetime.date(2018, 1, 29), datetime.date(2016, 8, 14), datetime.date(2010, 10, 15), datetime.date(2017, 3, 20), datetime.date(2015, 11, 30), datetime.date(2018, 8, 23), datetime.date(2010, 11, 7), datetime.date(2012, 11, 20), datetime.date(2015, 5, 3), datetime.date(2011, 10, 8), datetime.date(2017, 12, 5), datetime.date(2013, 7, 29), datetime.date(2017, 7, 29), datetime.date(2015, 1, 28)]
+Casper Ruud --> [datetime.date(2010, 10, 15), datetime.date(2010, 11, 7), datetime.date(2011, 10, 8), datetime.date(2012, 9, 2), datetime.date(2012, 11, 20), datetime.date(2013, 3, 24), datetime.date(2013, 7, 29), datetime.date(2015, 1, 28), datetime.date(2015, 5, 3), datetime.date(2015, 11, 30), datetime.date(2016, 8, 14), datetime.date(2017, 3, 20), datetime.date(2017, 7, 29), datetime.date(2017, 12, 5), datetime.date(2018, 1, 29), datetime.date(2018, 8, 23), datetime.date(2019, 1, 26), datetime.date(2019, 5, 22), datetime.date(2020, 10, 23)]
 Karen Khachanov --> [datetime.date(2020, 1, 2)]
-Holger Rune --> [datetime.date(2019, 8, 16), datetime.date(2013, 12, 19)]
-Pavel Kotov --> [datetime.date(2013, 12, 25), datetime.date(2012, 7, 21), datetime.date(2013, 3, 24)]
-Roberto Carballés Baena --> [datetime.date(2013, 12, 25), datetime.date(2014, 7, 6), datetime.date(2017, 10, 12), datetime.date(2016, 2, 3), datetime.date(2014, 4, 15)]
-Thanasi Kokkinakis --> [datetime.date(2013, 6, 23), datetime.date(2010, 10, 14)]
+Holger Rune --> [datetime.date(2013, 12, 19), datetime.date(2019, 8, 16)]
+Pavel Kotov --> [datetime.date(2012, 7, 21), datetime.date(2013, 3, 24), datetime.date(2013, 12, 25)]
+Roberto Carballés Baena --> [datetime.date(2013, 12, 25), datetime.date(2014, 4, 15), datetime.date(2014, 7, 6), datetime.date(2016, 2, 3), datetime.date(2017, 10, 12)]
+Thanasi Kokkinakis --> [datetime.date(2010, 10, 14), datetime.date(2013, 6, 23)]
 Marin Cilic --> [datetime.date(2018, 1, 4)]
-Taylor Fritz --> [datetime.date(2020, 12, 2), datetime.date(2017, 4, 20)]
-Andrey Rublev --> [datetime.date(2020, 2, 8), datetime.date(2017, 3, 16), datetime.date(2019, 3, 2), datetime.date(2011, 1, 12), datetime.date(2014, 1, 6), datetime.date(2018, 5, 19), datetime.date(2015, 6, 13), datetime.date(2016, 1, 26), datetime.date(2020, 7, 17), datetime.date(2013, 11, 29), datetime.date(2017, 6, 14), datetime.date(2011, 10, 8), datetime.date(2010, 8, 28), datetime.date(2011, 12, 23), datetime.date(2010, 11, 22), datetime.date(2017, 2, 28), datetime.date(2010, 9, 24), datetime.date(2015, 6, 4)]
-Felix Auger-Aliassime --> [datetime.date(2014, 10, 25), datetime.date(2017, 11, 1), datetime.date(2015, 2, 15), datetime.date(2016, 2, 9), datetime.date(2020, 5, 29), datetime.date(2012, 1, 8), datetime.date(2016, 6, 7), datetime.date(2016, 11, 20), datetime.date(2013, 2, 9), datetime.date(2017, 2, 16), datetime.date(2020, 7, 17), datetime.date(2011, 11, 4), datetime.date(2016, 9, 29), datetime.date(2014, 7, 30), datetime.date(2015, 9, 17)]
-Vasek Pospisil --> [datetime.date(2018, 7, 20), datetime.date(2020, 1, 24), datetime.date(2017, 4, 20)]
-Alex Molcan --> [datetime.date(2012, 7, 21), datetime.date(2014, 7, 10), datetime.date(2010, 9, 1)]
+Taylor Fritz --> [datetime.date(2017, 4, 20), datetime.date(2020, 12, 2)]
+Andrey Rublev --> [datetime.date(2010, 8, 28), datetime.date(2010, 9, 24), datetime.date(2010, 11, 22), datetime.date(2011, 1, 
+12), datetime.date(2011, 10, 8), datetime.date(2011, 12, 23), datetime.date(2013, 11, 29), datetime.date(2014, 1, 6), datetime.date(2015, 6, 4), datetime.date(2015, 6, 13), datetime.date(2016, 1, 26), datetime.date(2017, 2, 28), datetime.date(2017, 3, 16), datetime.date(2017, 6, 14), datetime.date(2018, 5, 19), datetime.date(2019, 3, 2), datetime.date(2020, 2, 8), datetime.date(2020, 7, 17)]
+Felix Auger-Aliassime --> [datetime.date(2011, 11, 4), datetime.date(2012, 1, 8), datetime.date(2013, 2, 9), datetime.date(2014, 7, 30), datetime.date(2014, 10, 25), datetime.date(2015, 2, 15), datetime.date(2015, 9, 17), datetime.date(2016, 2, 9), datetime.date(2016, 6, 7), datetime.date(2016, 9, 29), datetime.date(2016, 11, 20), datetime.date(2017, 2, 16), datetime.date(2017, 
+11, 1), datetime.date(2020, 5, 29), datetime.date(2020, 7, 17)]
+Vasek Pospisil --> [datetime.date(2017, 4, 20), datetime.date(2018, 7, 20), datetime.date(2020, 1, 24)]
+Alex Molcan --> [datetime.date(2010, 9, 1), datetime.date(2012, 7, 21), datetime.date(2014, 7, 10)]
 Nick Kyrgios --> [datetime.date(2012, 10, 24), datetime.date(2014, 3, 26), datetime.date(2018, 3, 23)]
 Daniel Elahi Galán --> [datetime.date(2017, 10, 12)]
-Borna Coric --> [datetime.date(2016, 2, 17), datetime.date(2010, 5, 27), datetime.date(2019, 4, 10)]
+Borna Coric --> [datetime.date(2010, 5, 27), datetime.date(2016, 2, 17), datetime.date(2019, 4, 10)]
 Jiri Lehecka --> [datetime.date(2012, 2, 13), datetime.date(2020, 6, 16)]
-Stefanos Tsitsipas --> [datetime.date(2020, 11, 9), datetime.date(2020, 10, 23), datetime.date(2017, 11, 7), datetime.date(2014, 10, 28), datetime.date(2020, 10, 4), datetime.date(2011, 12, 4), datetime.date(2010, 9, 20), datetime.date(2018, 9, 23), datetime.date(2016, 11, 20), datetime.date(2018, 3, 24), datetime.date(2019, 10, 24), datetime.date(2013, 2, 9), datetime.date(2012, 12, 18), datetime.date(2016, 6, 22), datetime.date(2017, 7, 29), datetime.date(2014, 10, 10), datetime.date(2015, 1, 28), datetime.date(2013, 7, 3)]
-Matteo Berrettini --> [datetime.date(2014, 7, 10), datetime.date(2010, 9, 1)]
+Stefanos Tsitsipas --> [datetime.date(2010, 9, 20), datetime.date(2011, 12, 4), datetime.date(2012, 12, 18), datetime.date(2013, 2, 9), datetime.date(2013, 7, 3), datetime.date(2014, 10, 10), datetime.date(2014, 10, 28), datetime.date(2015, 1, 28), datetime.date(2016, 6, 22), datetime.date(2016, 11, 20), datetime.date(2017, 7, 29), datetime.date(2017, 11, 7), datetime.date(2018, 3, 24), datetime.date(2018, 9, 23), datetime.date(2019, 10, 24), datetime.date(2020, 10, 4), datetime.date(2020, 10, 23), datetime.date(2020, 11, 9)]
+Matteo Berrettini --> [datetime.date(2010, 9, 1), datetime.date(2014, 7, 10)]
 Daniel Evans --> [datetime.date(2014, 9, 20)]
 Brandon Nakashima --> [datetime.date(2016, 8, 9)]
 Tomas Machac --> [datetime.date(2016, 8, 9)]
 Cameron Norrie --> [datetime.date(2017, 12, 21)]
 Kamil Majchrzak --> [datetime.date(2019, 4, 10)]
-Pedro Cachin --> [datetime.date(2012, 4, 20), datetime.date(2011, 12, 19)]
-Pablo Carre±o Busta --> [datetime.date(2015, 10, 27)]
+Pedro Cachin --> [datetime.date(2011, 12, 19), datetime.date(2012, 4, 20)]
+Pablo Carreño Busta --> [datetime.date(2015, 10, 27)]
 Frances Tiafoe --> [datetime.date(2014, 9, 20)]
 Oscar Otte --> [datetime.date(2010, 4, 24)]
 Marc-Andrea Huesler --> [datetime.date(2012, 7, 19)]
 Jannik Sinner --> [datetime.date(2015, 10, 25)]
-Dominic Thiem --> [datetime.date(2014, 8, 19), datetime.date(2014, 8, 19), datetime.date(2015, 2, 15), datetime.date(2016, 8, 30), datetime.date(2018, 3, 28), datetime.date(2012, 4, 20), datetime.date(2018, 9, 23), datetime.date(2011, 1, 9), datetime.date(2013, 2, 9), datetime.date(2018, 5, 23), datetime.date(2010, 11, 22), datetime.date(2017, 2, 28), datetime.date(2016, 6, 22), datetime.date(2010, 11, 26), datetime.date(2019, 6, 11), datetime.date(2015, 8, 8)]
-Rafael Nadal --> [datetime.date(2014, 8, 19), datetime.date(2014, 8, 19), datetime.date(2011, 3, 13), datetime.date(2010, 6, 27), datetime.date(2016, 8, 14), datetime.date(2020, 5, 29), datetime.date(2012, 12, 18), datetime.date(2019, 1, 15), datetime.date(2011, 11, 4), datetime.date(2016, 9, 29), datetime.date(2010, 10, 26), datetime.date(2015, 9, 17), datetime.date(2016, 3, 5), datetime.date(2018, 2, 11), datetime.date(2016, 1, 17), datetime.date(2015, 8, 8)]
-Roger Federer --> [datetime.date(2011, 3, 13), datetime.date(2016, 12, 4), datetime.date(2018, 2, 3), datetime.date(2015, 3, 7), datetime.date(2016, 9, 22), datetime.date(2019, 5, 22), datetime.date(2014, 1, 6), datetime.date(2012, 4, 20), datetime.date(2012, 1, 8), datetime.date(2017, 9, 6), datetime.date(2012, 3, 10), datetime.date(2010, 9, 24), datetime.date(2010, 9, 28), datetime.date(2014, 10, 10)]
-Roberto Bautista Agut --> [datetime.date(2017, 11, 1), datetime.date(2016, 2, 9), datetime.date(2018, 1, 29), datetime.date(2014, 10, 28), datetime.date(2014, 10, 28), datetime.date(2010, 10, 15), datetime.date(2011, 1, 12), datetime.date(2011, 12, 4), datetime.date(2016, 6, 7), datetime.date(2017, 6, 16), datetime.date(2018, 6, 3), datetime.date(2014, 11, 20), datetime.date(2020, 10, 24), datetime.date(2014, 7, 30), datetime.date(2018, 2, 11), datetime.date(2016, 1, 17), datetime.date(2017, 1, 29)]
+Dominic Thiem --> [datetime.date(2010, 11, 22), datetime.date(2010, 11, 26), datetime.date(2011, 1, 9), datetime.date(2012, 4, 
+20), datetime.date(2013, 2, 9), datetime.date(2014, 8, 19), datetime.date(2014, 8, 19), datetime.date(2015, 2, 15), datetime.date(2015, 8, 8), datetime.date(2016, 6, 22), datetime.date(2016, 8, 30), datetime.date(2017, 2, 28), datetime.date(2018, 3, 28), datetime.date(2018, 5, 23), datetime.date(2018, 9, 23), datetime.date(2019, 6, 11)]
+Rafael Nadal --> [datetime.date(2010, 6, 27), datetime.date(2010, 10, 26), datetime.date(2011, 3, 13), datetime.date(2011, 11, 
+4), datetime.date(2012, 12, 18), datetime.date(2014, 8, 19), datetime.date(2014, 8, 19), datetime.date(2015, 8, 8), datetime.date(2015, 9, 17), datetime.date(2016, 1, 17), datetime.date(2016, 3, 5), datetime.date(2016, 8, 14), datetime.date(2016, 9, 29), datetime.date(2018, 2, 11), datetime.date(2019, 1, 15), datetime.date(2020, 5, 29)]
+Roger Federer --> [datetime.date(2010, 9, 24), datetime.date(2010, 9, 28), datetime.date(2011, 3, 13), datetime.date(2012, 1, 8), datetime.date(2012, 3, 10), datetime.date(2012, 4, 20), datetime.date(2014, 1, 6), datetime.date(2014, 10, 10), datetime.date(2015, 3, 7), datetime.date(2016, 9, 22), datetime.date(2016, 12, 4), datetime.date(2017, 9, 6), datetime.date(2018, 2, 3), datetime.date(2019, 5, 22)]
+Roberto Bautista Agut --> [datetime.date(2010, 10, 15), datetime.date(2011, 1, 12), datetime.date(2011, 12, 4), datetime.date(2014, 7, 30), datetime.date(2014, 10, 28), datetime.date(2014, 10, 28), datetime.date(2014, 11, 20), datetime.date(2016, 1, 17), datetime.date(2016, 2, 9), datetime.date(2016, 6, 7), datetime.date(2017, 1, 29), datetime.date(2017, 6, 16), datetime.date(2017, 11, 1), datetime.date(2018, 1, 29), datetime.date(2018, 2, 11), datetime.date(2018, 6, 3), datetime.date(2020, 10, 24)]
 EJERCICIO  9==================================================
 Test de 'num_partidos_nombre' nombre:Rafael Nadal
 Los partidos jugados y ganados por superficie de Rafael Nadal son
@@ -506,6 +518,9 @@ Tierra --> 63
 Dura --> 51
 Sintética --> 12
 EJERCICIO 11==================================================
+Test de 'superficie_con_mas_tenistas_distintos'
+La superficie con más jugadores distintos es Tierra en la que ha jugado 63 tenistas
+EJERCICIO 12==================================================
 Test de 'mas_errores_por_jugador'
 El partido con más errores por cada jugador es
 Sebastian Korda --> PartidoTenis(fecha=datetime.date(2011, 11, 10), jugador1='John Isner', jugador2='Sebastian Korda', superficie='Hierba', resultado=[Parcial(juegos_j1=3, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=12, errores_nf2=10)
@@ -598,7 +613,7 @@ Dominic Thiem --> PartidoTenis(fecha=datetime.date(2010, 11, 22), jugador1='Domi
 Rafael Nadal --> PartidoTenis(fecha=datetime.date(2015, 8, 8), jugador1='Dominic Thiem', jugador2='Rafael Nadal', superficie='Tierra', resultado=[Parcial(juegos_j1=7, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=4), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=7, errores_nf2=16)
 Roger Federer --> PartidoTenis(fecha=datetime.date(2014, 10, 10), jugador1='Stefanos Tsitsipas', jugador2='Roger Federer', superficie='Tierra', resultado=[Parcial(juegos_j1=6, juegos_j2=2), Parcial(juegos_j1=2, juegos_j2=6), Parcial(juegos_j1=7, juegos_j2=6)], errores_nf1=17, errores_nf2=20)
 Roberto Bautista Agut --> PartidoTenis(fecha=datetime.date(2016, 1, 17), jugador1='Rafael Nadal', jugador2='Roberto Bautista Agut', superficie='Dura', resultado=[Parcial(juegos_j1=7, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=3, juegos_j2=6)], errores_nf1=12, errores_nf2=19)
-EJERCICIO 12==================================================
+EJERCICIO 13==================================================
 Test de 'partido_mas_errores_por_mes' superficies=['Sintética']
 Los partidos con mas errores para las superificies ['Sintética'] son
 12 --> (datetime.date(2017, 12, 27), 'Diego Schwartzman', 'Daniil Medvedev')
@@ -638,7 +653,7 @@ Los partidos con mas errores para las superificies None son
 9 --> (datetime.date(2020, 9, 4), 'Jordan Thompson', 'Jenson Brooksby')
 2 --> (datetime.date(2016, 2, 9), 'Roberto Bautista Agut', 'Felix Auger-Aliassime')
 5 --> (datetime.date(2012, 5, 30), 'Alexander Zverev', 'Novak Djokovic')
-EJERCICIO 13==================================================
+EJERCICIO 14==================================================
 Test de 'n_partidos_mas_errores_por_jugador' n=3
 Los 3 partidos con mas errores para los jugadores son
 Sebastian Korda --> [PartidoTenis(fecha=datetime.date(2011, 11, 10), jugador1='John Isner', jugador2='Sebastian Korda', superficie='Hierba', resultado=[Parcial(juegos_j1=3, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=12, errores_nf2=10), PartidoTenis(fecha=datetime.date(2011, 11, 7), jugador1='Sebastian Korda', jugador2='Ben Shelton', superficie='Hierba', resultado=[Parcial(juegos_j1=6, juegos_j2=3), Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=3, juegos_j2=6)], errores_nf1=8, errores_nf2=6)]
@@ -731,7 +746,7 @@ Dominic Thiem --> [PartidoTenis(fecha=datetime.date(2014, 8, 19), jugador1='Domi
 Rafael Nadal --> [PartidoTenis(fecha=datetime.date(2011, 3, 13), jugador1='Roger Federer', jugador2='Rafael Nadal', superficie='Dura', resultado=[Parcial(juegos_j1=6, juegos_j2=0), Parcial(juegos_j1=1, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=2)], errores_nf1=18, errores_nf2=20), PartidoTenis(fecha=datetime.date(2020, 5, 29), jugador1='Rafael Nadal', jugador2='Felix Auger-Aliassime', superficie='Sintética', resultado=[Parcial(juegos_j1=6, juegos_j2=4), Parcial(juegos_j1=0, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=3)], errores_nf1=20, errores_nf2=13), PartidoTenis(fecha=datetime.date(2016, 3, 5), jugador1='Rafael Nadal', jugador2='Novak Djokovic', superficie='Tierra', resultado=[Parcial(juegos_j1=6, juegos_j2=2), Parcial(juegos_j1=6, juegos_j2=3), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=19, errores_nf2=9)]
 Roger Federer --> [PartidoTenis(fecha=datetime.date(2018, 2, 3), jugador1='Roger Federer', jugador2='Diego Schwartzman', superficie='Hierba', resultado=[Parcial(juegos_j1=1, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=2), Parcial(juegos_j1=6, juegos_j2=4)], errores_nf1=20, errores_nf2=8), PartidoTenis(fecha=datetime.date(2012, 1, 8), jugador1='Felix Auger-Aliassime', jugador2='Roger Federer', superficie='Tierra', resultado=[Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=1, juegos_j2=6), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=4, errores_nf2=20), PartidoTenis(fecha=datetime.date(2010, 9, 24), jugador1='Roger Federer', jugador2='Andrey Rublev', superficie='Dura', resultado=[Parcial(juegos_j1=6, juegos_j2=3), Parcial(juegos_j1=6, juegos_j2=1), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=20, errores_nf2=2)]
 Roberto Bautista Agut --> [PartidoTenis(fecha=datetime.date(2016, 1, 17), jugador1='Rafael Nadal', jugador2='Roberto Bautista Agut', superficie='Dura', resultado=[Parcial(juegos_j1=7, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=7), Parcial(juegos_j1=3, juegos_j2=6)], errores_nf1=12, errores_nf2=19), PartidoTenis(fecha=datetime.date(2017, 11, 1), jugador1='Roberto Bautista Agut', jugador2='Felix Auger-Aliassime', superficie='Dura', resultado=[Parcial(juegos_j1=6, juegos_j2=0), Parcial(juegos_j1=0, juegos_j2=6), Parcial(juegos_j1=6, juegos_j2=1)], errores_nf1=18, errores_nf2=9), PartidoTenis(fecha=datetime.date(2010, 10, 15), jugador1='Casper Ruud', jugador2='Roberto Bautista Agut', superficie='Hierba', resultado=[Parcial(juegos_j1=6, juegos_j2=0), Parcial(juegos_j1=6, juegos_j2=3), Parcial(juegos_j1=0, juegos_j2=0)], errores_nf1=5, errores_nf2=17)]
-EJERCICIO 14==================================================
+EJERCICIO 15==================================================
 Test de 'test_mayor_numero_dias_sin_jugar' jugador=Carlos Alcaraz
-El mayor némero de días que el jugador Carlos Alcaraz ha estado sin jugar es 799
+El mayor número de días que el jugador Carlos Alcaraz ha estado sin jugar es 799 días
 ```
